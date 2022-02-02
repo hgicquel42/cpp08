@@ -6,7 +6,7 @@
 /*   By: hgicquel <hgicquel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 16:05:40 by hgicquel          #+#    #+#             */
-/*   Updated: 2022/02/02 17:02:43 by hgicquel         ###   ########.fr       */
+/*   Updated: 2022/02/02 17:07:56 by hgicquel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,12 @@ class Span
 		int		longestSpan(void) const;
 
 		template <typename T>
-		void	addNumber(T begin, T end);
+		void	addRange(T begin, T end);
 
 		class FullSpanException: public std::exception
 		{
 			public:
 				FullSpanException(void) throw();
-				virtual	~FullSpanException(void) throw();
 				virtual const char*	what() const throw();
 		};
 
@@ -42,13 +41,12 @@ class Span
 		{
 			public:
 				InvalidSizeException(void) throw();
-				virtual	~InvalidSizeException(void) throw();
 				virtual const char*	what() const throw();
 		};
 };
 
 template <typename T>
-void	Span::addNumber(T begin, T end)
+void	Span::addRange(T begin, T end)
 {
 	T	it;
 	for (it = begin; it != end; it++)

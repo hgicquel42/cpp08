@@ -6,12 +6,13 @@
 /*   By: hgicquel <hgicquel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 16:59:55 by hgicquel          #+#    #+#             */
-/*   Updated: 2022/02/02 17:02:19 by hgicquel         ###   ########.fr       */
+/*   Updated: 2022/02/02 17:10:28 by hgicquel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 #include <iostream>
+#include <vector>
 
 int	main(void)
 {
@@ -31,6 +32,19 @@ int	main(void)
 
 	std::cout << sp.shortestSpan() << "\n";
 	std::cout << sp.longestSpan() << "\n";
+
+	std::vector<int> v;
+	v.push_back(6);
+	v.push_back(3);
+	v.push_back(17);
+	v.push_back(9);
+	v.push_back(11);
+
+	Span sp2 = Span(5);
+	sp2.addRange(v.begin(), v.end());
+
+	std::cout << sp2.shortestSpan() << "\n";
+	std::cout << sp2.longestSpan() << "\n";
 
 	return 0;
 }

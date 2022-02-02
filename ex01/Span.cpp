@@ -6,7 +6,7 @@
 /*   By: hgicquel <hgicquel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 16:27:47 by hgicquel          #+#    #+#             */
-/*   Updated: 2022/02/02 17:05:06 by hgicquel         ###   ########.fr       */
+/*   Updated: 2022/02/02 17:07:21 by hgicquel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	Span::addNumber(int n)
 int	Span::longestSpan(void) const
 {
 	if (this->numbers.size() < 2)
-		throw InvalidSizeException();
+		throw Span::InvalidSizeException();
 	int max = *std::max_element(this->numbers.begin(), this->numbers.end());
 	int min = *std::min_element(this->numbers.begin(), this->numbers.end());
 	return (std::abs(max - min));
